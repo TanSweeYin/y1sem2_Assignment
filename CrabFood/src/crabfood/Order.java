@@ -150,11 +150,13 @@ public class Order extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PhumBucketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhumBucketActionPerformed
-        // TODO add your handling code here:
+        PhumBucket pb = new PhumBucket();
+        pb.setVisible(true);
     }//GEN-LAST:event_PhumBucketActionPerformed
 
     private void BurgerKrustyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BurgerKrustyActionPerformed
-        // TODO add your handling code here:
+        BurgerKrusty bk = new BurgerKrusty();
+        bk.setVisible(true);
     }//GEN-LAST:event_BurgerKrustyActionPerformed
 
     private void CrustyCrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrustyCrabActionPerformed

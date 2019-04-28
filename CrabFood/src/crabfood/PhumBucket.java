@@ -5,11 +5,22 @@
  */
 package crabfood;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author user
  */
 public class PhumBucket extends javax.swing.JFrame {
+
+    double totalprice = 0;
+    int cookingtime;
+    int count = 0;
+    Date d = new Date();
+    SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
+    Calendar cal = Calendar.getInstance();
 
     /**
      * Creates new form PhumBucket
@@ -28,51 +39,104 @@ public class PhumBucket extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        l13 = new javax.swing.JCheckBox();
+        l22 = new javax.swing.JCheckBox();
+        l41 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jTextField1 = new javax.swing.JTextField();
+        PhumBurger = new javax.swing.JCheckBox();
+        PhumFries = new javax.swing.JCheckBox();
+        PhumPie = new javax.swing.JCheckBox();
+        placeOrderMsg = new javax.swing.JLabel();
+        calculatemsg = new javax.swing.JLabel();
+        placeOrderMsg2 = new javax.swing.JLabel();
+        PlaceOrder = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        calprice = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel1.setText("Select which branch you would like to order from : ");
 
-        jCheckBox1.setText("1 3");
-
-        jCheckBox2.setText("2 2");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        l13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        l13.setText("1 3");
+        l13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                l13ActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("4 1");
+        l22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        l22.setText("2 2");
+        l22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l22ActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        l41.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        l41.setText("4 1");
+        l41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l41ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel2.setText("Select which dish you would like to order : ");
 
-        jCheckBox4.setText("Phum Burger");
-
-        jCheckBox5.setText("Phum Fries");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        PhumBurger.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        PhumBurger.setText("Phum Burger  $4.50");
+        PhumBurger.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                PhumBurgerActionPerformed(evt);
             }
         });
 
-        jCheckBox6.setText("Phum Pie");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        PhumFries.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        PhumFries.setText("Phum Fries     $2.90");
+        PhumFries.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                PhumFriesActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("jTextField1");
+        PhumPie.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        PhumPie.setText("Phum Pie       $3.00");
+        PhumPie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PhumPieActionPerformed(evt);
+            }
+        });
+
+        placeOrderMsg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        placeOrderMsg.setText("jLabel3");
+
+        calculatemsg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        calculatemsg.setText("jLabel4");
+        calculatemsg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        placeOrderMsg2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        placeOrderMsg2.setText("jLabel5");
+
+        PlaceOrder.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        PlaceOrder.setText("Place Order");
+        PlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlaceOrderActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jButton2.setText("Calculate");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        calprice.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        calprice.setText("jLabel6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,17 +145,33 @@ public class PhumBucket extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jCheckBox2, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(191, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PhumFries)
+                            .addComponent(PhumBurger)
+                            .addComponent(l13)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(l41)
+                            .addComponent(l22)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(placeOrderMsg2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(placeOrderMsg, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)))
+                        .addContainerGap(255, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(calculatemsg, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
+                                .addComponent(calprice, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(PlaceOrder))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PhumPie)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(139, 139, 139))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,38 +179,131 @@ public class PhumBucket extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(l13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(l22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(l41)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(PhumBurger)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox5)
-                .addGap(32, 32, 32)
-                .addComponent(jCheckBox6)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addComponent(PhumFries)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PhumPie)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PlaceOrder)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calprice, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculatemsg, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(placeOrderMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(placeOrderMsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void l22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l22ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_l22ActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    private void PhumPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhumPieActionPerformed
+        totalprice += 3.00;
+        cookingtime += 20;
+    }//GEN-LAST:event_PhumPieActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+    private void PhumFriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhumFriesActionPerformed
+        totalprice+=2.90;
+        cookingtime +=20;
+    }//GEN-LAST:event_PhumFriesActionPerformed
+
+    private void l13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    }//GEN-LAST:event_l13ActionPerformed
+
+    private void l41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l41ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_l41ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        calprice.setText("Total price: $"+totalprice);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlaceOrderActionPerformed
+        count++;
+        if (PhumBurger.isSelected() && PhumFries.isSelected() && PhumPie.isSelected()) {
+            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + count + " wants to order Phum Burger,<br>Phum Fries and Phum Pie.</html>");
+        } else if (PhumBurger.isSelected() && PhumFries.isSelected()) {
+            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + count + " wants to order Phum Burger and Phum Fries.</html>");
+        } else if (PhumBurger.isSelected() && PhumPie.isSelected()) {
+            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Burger and Phum Pie.");
+        } else if (PhumFries.isSelected() && PhumPie.isSelected()) {
+            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Fries and Phum Pie.");
+        } else if (PhumBurger.isSelected()) {
+            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Burger.");
+        } else if (PhumFries.isSelected()) {
+            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Fries.");
+        } else if (PhumPie.isSelected()) {
+            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Pie.");
+        }
+        
+        if (l13.isSelected()) {
+            placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (1,3) takes order.");
+        }
+        if (l22.isSelected()) {
+            placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (2,2) takes order.");
+        }
+        if (l41.isSelected()) {
+            placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (4,0) takes order.");
+        }
+        
+        
+        //calculate delivery time
+        Date dNow = new Date();
+     
+        if(l13.isSelected()){
+            int distance = 4;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+        if(l22.isSelected()){
+            int distance = 4;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+        if(l41.isSelected()){
+            int distance = 5;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+    }//GEN-LAST:event_PlaceOrderActionPerformed
+
+    private void PhumBurgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhumBurgerActionPerformed
+        cookingtime += 20;
+        totalprice += 4.50;
+    }//GEN-LAST:event_PhumBurgerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,14 +341,19 @@ public class PhumBucket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox PhumBurger;
+    private javax.swing.JCheckBox PhumFries;
+    private javax.swing.JCheckBox PhumPie;
+    private javax.swing.JButton PlaceOrder;
+    private javax.swing.JLabel calculatemsg;
+    private javax.swing.JLabel calprice;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JCheckBox l13;
+    private javax.swing.JCheckBox l22;
+    private javax.swing.JCheckBox l41;
+    private javax.swing.JLabel placeOrderMsg;
+    private javax.swing.JLabel placeOrderMsg2;
     // End of variables declaration//GEN-END:variables
 }

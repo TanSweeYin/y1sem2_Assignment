@@ -8,6 +8,7 @@ package crabfood;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.Timer;
 
@@ -18,10 +19,11 @@ import javax.swing.Timer;
 public class CrustyCrab extends javax.swing.JFrame {
     double totalprice = 0;
     int cookingtime;
-    int count = 0;
+    int count = 1;
     Date d = new Date();
-    SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+    SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
+    Calendar cal = Calendar.getInstance();
+    
 
     /**
      * Creates new form CrustyCrab
@@ -43,7 +45,7 @@ public class CrustyCrab extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Date d = new Date();
-                SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+             //   SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
                 //  timeLab.setText(s.format(d));
             }
         }).start();
@@ -70,12 +72,16 @@ public class CrustyCrab extends javax.swing.JFrame {
         PlaceOrder = new javax.swing.JButton();
         PlaceOrderMsg = new javax.swing.JLabel();
         PlaceOrderMsg2 = new javax.swing.JLabel();
+        calculatemsg = new javax.swing.JLabel();
+        calprice = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel1.setText("Select which branch you would like to order from :");
 
+        l33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         l33.setText("3 3");
         l33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,13 +89,26 @@ public class CrustyCrab extends javax.swing.JFrame {
             }
         });
 
+        l20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         l20.setText("2 0");
+        l20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l20ActionPerformed(evt);
+            }
+        });
 
+        l44.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         l44.setText("4 4");
+        l44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                l44ActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel2.setText("What dish would you like to order?");
 
+        CrabbyPatty.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         CrabbyPatty.setText("Crabby Patty $5.00");
         CrabbyPatty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +116,7 @@ public class CrustyCrab extends javax.swing.JFrame {
             }
         });
 
+        CrabbyMeal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         CrabbyMeal.setText("Crabby Meal  $7.50");
         CrabbyMeal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +124,7 @@ public class CrustyCrab extends javax.swing.JFrame {
             }
         });
 
+        SailorsSurprise.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         SailorsSurprise.setText("Sailors Surprise $6.50");
         SailorsSurprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,58 +140,92 @@ public class CrustyCrab extends javax.swing.JFrame {
             }
         });
 
+        PlaceOrderMsg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        PlaceOrderMsg2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        calculatemsg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        calculatemsg.setText("   Estimated arrival :");
+        calculatemsg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        calprice.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        calprice.setText("   Total price :");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setText("Calculate");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CrabbyMeal)
-                    .addComponent(CrabbyPatty)
+                .addGap(78, 78, 78)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(l33)
                     .addComponent(l20)
                     .addComponent(l44)
-                    .addComponent(l33)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SailorsSurprise)
-                        .addGap(211, 211, 211)
-                        .addComponent(PlaceOrder))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PlaceOrderMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PlaceOrderMsg2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(201, Short.MAX_VALUE))
+                    .addComponent(CrabbyPatty)
+                    .addComponent(CrabbyMeal)
+                    .addComponent(SailorsSurprise)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(calculatemsg, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(calprice, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PlaceOrder))
+                        .addGap(68, 68, 68))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(PlaceOrderMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PlaceOrderMsg2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(78, 78, 78))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(l33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(l20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(l44)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CrabbyPatty)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CrabbyMeal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SailorsSurprise)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addComponent(PlaceOrder)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SailorsSurprise)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 35, Short.MAX_VALUE)
-                        .addComponent(PlaceOrder)))
+                    .addComponent(calprice, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculatemsg, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PlaceOrderMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PlaceOrderMsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PlaceOrderMsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addComponent(PlaceOrderMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         pack();
@@ -178,36 +233,69 @@ public class CrustyCrab extends javax.swing.JFrame {
 
     private void l33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l33ActionPerformed
         l33.isSelected();
-        //  PlaceOrderMsg.setText(m.format(d)+s.format(d)+": Branch of Crusty Crab at (3,3) takes order.\n");
-
+        int distance = 6;
     }//GEN-LAST:event_l33ActionPerformed
 
     private void PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlaceOrderActionPerformed
         count++;
         if (CrabbyMeal.isSelected() && SailorsSurprise.isSelected() && CrabbyPatty.isSelected()) {
-            PlaceOrderMsg.setText("<html>"+m.format(d) + s.format(d) + ": Customer " + count + " wants to order Crabby Patty,<br>Crabby Meal and Sailors Surprise.</html>");
+            PlaceOrderMsg.setText("<html>"+m.format(d)  + ": Customer " + count + " wants to order Crabby Patty,<br>Crabby Meal and Sailors Surprise.</html>");
         } else if (CrabbyMeal.isSelected() && SailorsSurprise.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + s.format(d) + ": Customer " + count + " wants to order Crabby Meal and Sailors Surprise.");
+            PlaceOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Crabby Meal and Sailors Surprise.");
         } else if (CrabbyPatty.isSelected() && SailorsSurprise.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + s.format(d) + ": Customer " + count + " wants to order Crabby Patty and Sailors Surprise.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Patty and Sailors Surprise.");
         } else if (CrabbyPatty.isSelected() && CrabbyMeal.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + s.format(d) + ": Customer " + count + " wants to order Crabby Patty and Crabby Meal.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Patty and Crabby Meal.");
         } else if (SailorsSurprise.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + s.format(d) + ": Customer " + count + " wants to order Sailors Surprise.");
+            PlaceOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Sailors Surprise.");
         } else if (CrabbyMeal.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + s.format(d) + ": Customer " + count + " wants to order Crabby Meal.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Meal.");
         } else if (CrabbyPatty.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + s.format(d) + ": Customer " + count + " wants to order Crabby Patty.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Patty.");
         }
 
         if (l33.isSelected()) {
-            PlaceOrderMsg2.setText(m.format(d) + s.format(d) + ": Branch of Crusty Crab at (3,3) takes order.");
+            PlaceOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (3,3) takes order.");
         }
         if (l20.isSelected()) {
-            PlaceOrderMsg2.setText(m.format(d) + s.format(d) + ": Branch of Crusty Crab at (2,0) takes order.");
+            PlaceOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (2,0) takes order.");
         }
         if (l44.isSelected()) {
-            PlaceOrderMsg2.setText(m.format(d) + s.format(d) + ": Branch of Crusty Crab at (4,4) takes order.");
+            PlaceOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (4,4) takes order.");
+        }
+        
+        //calculating delivery time
+        Date dNow = new Date();
+     
+        if(l33.isSelected()){
+            int distance = 6;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, 6+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+        if(l20.isSelected()){
+            int distance = 2;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+        if(l44.isSelected()){
+            int distance = 8;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
         }
     }//GEN-LAST:event_PlaceOrderActionPerformed
 
@@ -230,6 +318,18 @@ public class CrustyCrab extends javax.swing.JFrame {
         cookingtime+=20;
         totalprice += 6.50;
     }//GEN-LAST:event_SailorsSurpriseActionPerformed
+
+    private void l20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l20ActionPerformed
+        int distance = 2;
+    }//GEN-LAST:event_l20ActionPerformed
+
+    private void l44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_l44ActionPerformed
+        int distance = 8;
+    }//GEN-LAST:event_l44ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        calprice.setText(" Total price :$ "+totalprice);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,6 +373,9 @@ public class CrustyCrab extends javax.swing.JFrame {
     private javax.swing.JLabel PlaceOrderMsg;
     private javax.swing.JLabel PlaceOrderMsg2;
     private javax.swing.JCheckBox SailorsSurprise;
+    private javax.swing.JLabel calculatemsg;
+    private javax.swing.JLabel calprice;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JCheckBox l20;
