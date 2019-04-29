@@ -23,7 +23,6 @@ public class Order extends javax.swing.JFrame {
      * Creates new form Order
      */
     public Order() {
-      
         initComponents();
         showDate();
         showTime();

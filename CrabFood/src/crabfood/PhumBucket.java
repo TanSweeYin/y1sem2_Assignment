@@ -15,9 +15,9 @@ import java.util.Date;
  */
 public class PhumBucket extends javax.swing.JFrame {
 
-    double totalprice = 0;
+    double totalprice;
     int cookingtime;
-    int count = 0;
+    int count;
     Date d = new Date();
     SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
     Calendar cal = Calendar.getInstance();
@@ -261,7 +261,7 @@ public class PhumBucket extends javax.swing.JFrame {
             placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (2,2) takes order.");
         }
         if (l41.isSelected()) {
-            placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (4,0) takes order.");
+            placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (4,1) takes order.");
         }
         
         

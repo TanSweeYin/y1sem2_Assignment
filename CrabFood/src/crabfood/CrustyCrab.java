@@ -17,9 +17,9 @@ import javax.swing.Timer;
  * @author user
  */
 public class CrustyCrab extends javax.swing.JFrame {
-    double totalprice = 0;
+    double totalprice ;
     int cookingtime;
-    int count = 1;
+    int count ;
     Date d = new Date();
     SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
     Calendar cal = Calendar.getInstance();
@@ -212,9 +212,9 @@ public class CrustyCrab extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CrabbyMeal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SailorsSurprise)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addComponent(PlaceOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
