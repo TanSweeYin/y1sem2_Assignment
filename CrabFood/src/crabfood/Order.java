@@ -40,7 +40,7 @@ public class Order extends javax.swing.JFrame {
         new Timer(0, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // Date d = new Date();
+                Date d = new Date();
                 SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
                 timeLab.setText(s.format(d));
             }

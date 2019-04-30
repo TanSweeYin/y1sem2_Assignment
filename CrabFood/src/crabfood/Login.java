@@ -37,17 +37,14 @@ public class Login extends javax.swing.JFrame {
         showTime();
         this.count = count;
     }
-     void showDate() {
-       // Date d = new Date();
-       // SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
+     void showDate() {      
         dateLab.setText(s.format(d));
     }
 
     void showTime() {
-        new Timer(0, new ActionListener() {
-            @Override
+        new Timer(0, new ActionListener() {         
             public void actionPerformed(ActionEvent e) {
-               // Date d = new Date();
+                Date d = new Date();
                 SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
                 timeLab.setText(s.format(d));
             }
