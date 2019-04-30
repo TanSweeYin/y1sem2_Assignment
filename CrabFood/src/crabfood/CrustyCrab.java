@@ -19,12 +19,12 @@ import javax.swing.Timer;
 public class CrustyCrab extends javax.swing.JFrame {
     double totalprice ;
     int cookingtime;
-    int count ;
+    
     Date d = new Date();
     SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
     Calendar cal = Calendar.getInstance();
+    static Login in = new Login() ;
     
-
     /**
      * Creates new form CrustyCrab
      */
@@ -237,21 +237,21 @@ public class CrustyCrab extends javax.swing.JFrame {
     }//GEN-LAST:event_l33ActionPerformed
 
     private void PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlaceOrderActionPerformed
-        count++;
+        
         if (CrabbyMeal.isSelected() && SailorsSurprise.isSelected() && CrabbyPatty.isSelected()) {
-            PlaceOrderMsg.setText("<html>"+m.format(d)  + ": Customer " + count + " wants to order Crabby Patty,<br>Crabby Meal and Sailors Surprise.</html>");
+            PlaceOrderMsg.setText("<html>"+m.format(d)  + ": Customer " + in.getCount() + " wants to order Crabby Patty,<br>Crabby Meal and Sailors Surprise.</html>");
         } else if (CrabbyMeal.isSelected() && SailorsSurprise.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Crabby Meal and Sailors Surprise.");
+            PlaceOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Crabby Meal and Sailors Surprise.");
         } else if (CrabbyPatty.isSelected() && SailorsSurprise.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Patty and Sailors Surprise.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + in.getCount() + " wants to order Crabby Patty and Sailors Surprise.");
         } else if (CrabbyPatty.isSelected() && CrabbyMeal.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Patty and Crabby Meal.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + in.getCount() + " wants to order Crabby Patty and Crabby Meal.");
         } else if (SailorsSurprise.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Sailors Surprise.");
+            PlaceOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Sailors Surprise.");
         } else if (CrabbyMeal.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Meal.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + in.getCount() + " wants to order Crabby Meal.");
         } else if (CrabbyPatty.isSelected()) {
-            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + count + " wants to order Crabby Patty.");
+            PlaceOrderMsg.setText(m.format(d)  + ": Customer " + in.getCount() + " wants to order Crabby Patty.");
         }
 
         if (l33.isSelected()) {
@@ -335,6 +335,8 @@ public class CrustyCrab extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -365,6 +367,7 @@ public class CrustyCrab extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CrabbyMeal;

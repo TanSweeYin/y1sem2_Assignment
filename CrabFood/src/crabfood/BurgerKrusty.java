@@ -16,10 +16,10 @@ import java.util.Date;
 public class BurgerKrusty extends javax.swing.JFrame {
 double totalprice;
     int cookingtime;
-    int count;
     Date d = new Date();
     SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
     Calendar cal = Calendar.getInstance();
+    static Login in = new Login() ;
     /**
      * Creates new form BurgerKrusty
      */
@@ -37,17 +37,17 @@ double totalprice;
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        l14 = new javax.swing.JCheckBox();
+        l01 = new javax.swing.JCheckBox();
+        l40 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         TheKlogger = new javax.swing.JCheckBox();
         FishSandwich = new javax.swing.JCheckBox();
         TwistyLard = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        calprice = new javax.swing.JLabel();
+        calculatemsg = new javax.swing.JLabel();
         placeOrderMsg = new javax.swing.JLabel();
         placeOrderMsg2 = new javax.swing.JLabel();
 
@@ -57,23 +57,28 @@ double totalprice;
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel1.setText("Select which branch you would like to order from : ");
 
-        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jCheckBox1.setText("1 4");
+        l14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        l14.setText("1 4");
 
-        jCheckBox2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jCheckBox2.setText("0 1");
+        l01.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        l01.setText("0 1");
 
-        jCheckBox3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jCheckBox3.setText("4 0");
+        l40.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        l40.setText("4 0");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel2.setText("Select which dish you would like to order :");
 
         TheKlogger.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TheKlogger.setText("The Klogger");
+        TheKlogger.setText("The Klogger     $6.00");
+        TheKlogger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TheKloggerActionPerformed(evt);
+            }
+        });
 
         FishSandwich.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        FishSandwich.setText("Fish Sandwich");
+        FishSandwich.setText("Fish Sandwich   $5.50");
         FishSandwich.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FishSandwichActionPerformed(evt);
@@ -81,7 +86,7 @@ double totalprice;
         });
 
         TwistyLard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TwistyLard.setText("Twisty Lard");
+        TwistyLard.setText("Twisty Lard      $3.50");
         TwistyLard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TwistyLardActionPerformed(evt);
@@ -98,13 +103,18 @@ double totalprice;
 
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jButton2.setText("Calculate");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Price : $");
+        calprice.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        calprice.setText("Price : $");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Estimated time :");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        calculatemsg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        calculatemsg.setText("Estimated time :");
+        calculatemsg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         placeOrderMsg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         placeOrderMsg.setText("jLabel5");
@@ -124,19 +134,19 @@ double totalprice;
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TwistyLard)
-                            .addComponent(FishSandwich)
-                            .addComponent(TheKlogger)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox1)
+                            .addComponent(l01)
+                            .addComponent(l14)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(l40)
+                            .addComponent(calculatemsg, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FishSandwich)
+                            .addComponent(TheKlogger))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(calprice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(139, 139, 139))
         );
         layout.setVerticalGroup(
@@ -144,23 +154,23 @@ double totalprice;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(275, Short.MAX_VALUE)
+                        .addContainerGap(300, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(calprice, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox1)
+                        .addComponent(l14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox2)
+                        .addComponent(l01)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox3)
-                        .addGap(46, 46, 46)
+                        .addComponent(l40)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(TheKlogger)
@@ -168,32 +178,99 @@ double totalprice;
                         .addComponent(FishSandwich)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TwistyLard)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(38, 38, 38)
+                        .addComponent(calculatemsg, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addComponent(placeOrderMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(placeOrderMsg2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addGap(55, 55, 55))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void FishSandwichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FishSandwichActionPerformed
-        // TODO add your handling code here:
+        totalprice += 5.50;
+        cookingtime += 20;
     }//GEN-LAST:event_FishSandwichActionPerformed
 
     private void TwistyLardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TwistyLardActionPerformed
-        // TODO add your handling code here:
+        totalprice +=3.50;
+         cookingtime += 20;
     }//GEN-LAST:event_TwistyLardActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        count++;
+        
         if (TheKlogger.isSelected() && FishSandwich.isSelected() && TwistyLard.isSelected()) 
-            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + count + " wants to order The Klogger,<br>Fish Sandwich and Twisty Lard.</html>");
-        else if (TheKlogger.isSelected() && FishSandwich.isSelected() && TwistyLard.isSelected()) 
-            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + count + " wants to order The Klogger,<br>Fish Sandwich and Twisty Lard.</html>");
+            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + in.getCount() + " wants to order The Klogger,<br>Fish Sandwich and Twisty Lard.</html>");
+        else if (TheKlogger.isSelected() && FishSandwich.isSelected() ) 
+            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + in.getCount() + " wants to order The Klogger and Fish Sandwich.</html>");
+        
+         else if (TheKlogger.isSelected() && TwistyLard.isSelected()) 
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order The Klogger and Twisty Lard.");
+        else if (FishSandwich.isSelected() && TwistyLard.isSelected()) 
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount()+ " wants to order Fish Sandwich and Twisty Lard.");
+        else if (TheKlogger.isSelected() ) 
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount()+ " wants to order The Klogger.");
+        else if (TwistyLard.isSelected()) 
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Twisty Lard.");
+        else if (FishSandwich.isSelected()) 
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Fish Sandwich.");
+        
+        
+        if(l14.isSelected())
+             placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (1,4) takes order.");
+        if(l01.isSelected())
+             placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (0,1) takes order.");
+        if(l40.isSelected())
+             placeOrderMsg2.setText(m.format(d) + ": Branch of Crusty Crab at (4,0) takes order.");
+       
+        
+        //estimate arrival time
+         Date dNow = new Date();
+     
+        if(l14.isSelected()){
+            int distance = 5;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+        if(l01.isSelected()){
+            int distance =1;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
+        if(l40.isSelected()){
+            int distance = 4;
+            cal.setTime(dNow);
+            cal.add(Calendar.MINUTE, distance+cookingtime);
+            dNow=cal.getTime();
+        calculatemsg.setText("<html> Preparation time : " + cookingtime+" minutes<br>"+
+                             " Delivery time: "+distance   +" minutes <br>"+
+                             " Estimated arrival: "+dNow      + "</html>");
+                                    
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        calprice.setText(" $"+totalprice);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void TheKloggerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TheKloggerActionPerformed
+        totalprice += 6.00;
+         cookingtime += 20;
+    }//GEN-LAST:event_TheKloggerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,15 +311,15 @@ double totalprice;
     private javax.swing.JCheckBox FishSandwich;
     private javax.swing.JCheckBox TheKlogger;
     private javax.swing.JCheckBox TwistyLard;
+    private javax.swing.JLabel calculatemsg;
+    private javax.swing.JLabel calprice;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JCheckBox l01;
+    private javax.swing.JCheckBox l14;
+    private javax.swing.JCheckBox l40;
     private javax.swing.JLabel placeOrderMsg;
     private javax.swing.JLabel placeOrderMsg2;
     // End of variables declaration//GEN-END:variables

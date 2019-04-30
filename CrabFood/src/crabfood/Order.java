@@ -18,6 +18,7 @@ import javax.swing.Timer;
 public class Order extends javax.swing.JFrame {
     Date d = new Date();       
     SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
+    
 
     /**
      * Creates new form Order
@@ -151,16 +152,19 @@ public class Order extends javax.swing.JFrame {
     private void PhumBucketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhumBucketActionPerformed
         PhumBucket pb = new PhumBucket();
         pb.setVisible(true);
+        dispose();
     }//GEN-LAST:event_PhumBucketActionPerformed
 
     private void BurgerKrustyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BurgerKrustyActionPerformed
         BurgerKrusty bk = new BurgerKrusty();
         bk.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BurgerKrustyActionPerformed
 
     private void CrustyCrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrustyCrabActionPerformed
         CrustyCrab cc = new CrustyCrab();
         cc.setVisible(true);
+        dispose();
     }//GEN-LAST:event_CrustyCrabActionPerformed
 
     /**

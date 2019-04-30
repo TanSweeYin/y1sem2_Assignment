@@ -17,11 +17,10 @@ public class PhumBucket extends javax.swing.JFrame {
 
     double totalprice;
     int cookingtime;
-    int count;
     Date d = new Date();
     SimpleDateFormat m = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss a");
     Calendar cal = Calendar.getInstance();
-
+    static Login in = new Login() ;
     /**
      * Creates new form PhumBucket
      */
@@ -237,21 +236,21 @@ public class PhumBucket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlaceOrderActionPerformed
-        count++;
+       
         if (PhumBurger.isSelected() && PhumFries.isSelected() && PhumPie.isSelected()) {
-            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + count + " wants to order Phum Burger,<br>Phum Fries and Phum Pie.</html>");
+            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + in.getCount()+ " wants to order Phum Burger,<br>Phum Fries and Phum Pie.</html>");
         } else if (PhumBurger.isSelected() && PhumFries.isSelected()) {
-            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + count + " wants to order Phum Burger and Phum Fries.</html>");
+            placeOrderMsg.setText("<html>" + m.format(d) + ": Customer " + in.getCount() + " wants to order Phum Burger and Phum Fries.</html>");
         } else if (PhumBurger.isSelected() && PhumPie.isSelected()) {
-            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Burger and Phum Pie.");
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount()+ " wants to order Phum Burger and Phum Pie.");
         } else if (PhumFries.isSelected() && PhumPie.isSelected()) {
-            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Fries and Phum Pie.");
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Phum Fries and Phum Pie.");
         } else if (PhumBurger.isSelected()) {
-            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Burger.");
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Phum Burger.");
         } else if (PhumFries.isSelected()) {
-            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Fries.");
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Phum Fries.");
         } else if (PhumPie.isSelected()) {
-            placeOrderMsg.setText(m.format(d) + ": Customer " + count + " wants to order Phum Pie.");
+            placeOrderMsg.setText(m.format(d) + ": Customer " + in.getCount() + " wants to order Phum Pie.");
         }
         
         if (l13.isSelected()) {

@@ -16,17 +16,26 @@ import javax.swing.Timer;
  * @author user
  */
 public class Login extends javax.swing.JFrame {
-    int count = 0 ;
+   
+    protected static int count;
+    
     Date d = new Date();       
     SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
     /**
      * Creates new form GUI
      */
-    public Login() {        
+    
+    
+
+    public int getCount() {      
+            return count;
+    }
+
+    public Login() {
         initComponents();
         showDate();
         showTime();
-        
+        this.count = count;
     }
      void showDate() {
        // Date d = new Date();
@@ -188,11 +197,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordActionPerformed
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        
+           
        // if(Username.getText().equals("John") && Password.getText().equals("123")){
             messagelogin.setText("Welcome."+Username.getText()+". Login is successful.");
-            count ++;
-            messagelogin.setText("CustomerID : "+count);
+            this.count ++;
+            messagelogin.setText("CustomerID : "+this.getCount());
             Order o1 = new Order();            
             o1.setVisible(true);
             
