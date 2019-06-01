@@ -20,7 +20,6 @@ public class printLogFileGUI extends javax.swing.JFrame {
     /**
      * Creates new form printLogFile
      */
-
     public printLogFileGUI(ArrayList<Customer> allCustomer) {
         initComponents();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -56,6 +55,7 @@ public class printLogFileGUI extends javax.swing.JFrame {
         logFileMsg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         printLogFile.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         printLogFile.setForeground(new java.awt.Color(255, 0, 51));

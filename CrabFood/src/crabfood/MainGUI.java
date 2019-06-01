@@ -22,7 +22,6 @@ public class MainGUI extends javax.swing.JFrame {
     private static String input;
     private static ArrayList<Customer> customerList;
     private printLogFileGUI result;
-    static private MainGUI cb;
 
     /**
      * Creates new form MainGUI
@@ -107,11 +106,12 @@ public class MainGUI extends javax.swing.JFrame {
 
         jComboBox1 = new javax.swing.JComboBox<>();
         Enter = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 255));
 
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Automated", "Manual"}));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +119,7 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        Enter.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Enter.setText("Enter");
         Enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,11 +127,14 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jTextArea2.setRows(5);
-        jTextArea2.setText("WELCOME TO ABC FOOD DELIVERY!\n\nSelect manually or automated\ngenerating customers: ");
-        jScrollPane2.setViewportView(jTextArea2);
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 2, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 255));
+        jLabel1.setText("<html> WELCOME TO ABC FOOD DELIVERY!<br>" +
+            "</br>" +
+            "<br></br>  Select manually or automatically" +
+            "<br></br>  generate customers: </html>");
+        jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,22 +143,22 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Enter))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(251, 251, 251)
+                        .addComponent(Enter, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Enter))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Enter, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
 
@@ -169,11 +173,12 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
-        
+      
         System.out.println(input);
         if (input.equalsIgnoreCase("Manual")) {
             ManualGUI mg = new ManualGUI();
             mg.setVisible(true);
+
             try {
                 PrintWriter writer = new PrintWriter("manuallog.txt");
                 writer.print("");
@@ -182,78 +187,78 @@ public class MainGUI extends javax.swing.JFrame {
                 System.out.println("Fail to rewrite file.");
             }
         } else {
-         
-              int numberOfArrival = 0;
-                int delivered = 0;
-                int count = 0;
-                FoodDelivery start = new FoodDelivery(16, getNumberOfCustomer()); 
-                customerList = new ArrayList<>();
-                  String[][] dish = new String[4][4];
-                int[][] prepareTime = new int[4][4];
 
-                  for (int n = 0; n < 4; n++) {
-                    for (int i = 0; i < 4; i++) {
-                        dish[n][i] = getvalue((1 + n), 6 + (2 * i));         //(read frm input)getValue(int shop, int dish)- shop 1/2/3/4 - dish , dish[n][i]:dish name
-                        prepareTime[n][i] = Integer.parseInt(getvalue((1 + n), 7 + (2 * i)));    //(read frm input)prepare time for different dish , String -> Integer: Integer.parseInt
-                    }
-                    //?? Character.getNumericValue
-                    for (int m = 0; m < 4; m++) {
-                        //start.addLast(shop name, dish name :String[][] , prepareTime , get int x from string, ...y 
-                        start.addLast(getvalue((1 + n), 1), dish[n], prepareTime[n], Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(0)), Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(2)));
+            int numberOfArrival = 0;
+            int delivered = 0;
+            int count = 0;
+            FoodDelivery start = new FoodDelivery(16, getNumberOfCustomer());
+            customerList = new ArrayList<>();
+            String[][] dish = new String[4][4];
+            int[][] prepareTime = new int[4][4];
+
+            for (int n = 0; n < 4; n++) {
+                for (int i = 0; i < 4; i++) {
+                    dish[n][i] = getvalue((1 + n), 6 + (2 * i));         //(read frm input)getValue(int shop, int dish)- shop 1/2/3/4 - dish , dish[n][i]:dish name
+                    prepareTime[n][i] = Integer.parseInt(getvalue((1 + n), 7 + (2 * i)));    //(read frm input)prepare time for different dish , String -> Integer: Integer.parseInt
+                }
+                //?? Character.getNumericValue
+                for (int m = 0; m < 4; m++) {
+                    //start.addLast(shop name, dish name :String[][] , prepareTime , get int x from string, ...y 
+                    start.addLast(getvalue((1 + n), 1), dish[n], prepareTime[n], Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(0)), Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(2)));
+                }
+            }
+            while (delivered != getNumberOfCustomer()) {
+                if (count == 0) {
+                    System.out.println(count + ": A new day has start!");
+                }
+                for (int i = 0; i < start.count; i++) {
+                    if (start.getWaitingTime(i) > 0) {
+                        start.minusWaitingTime(i);
                     }
                 }
-                while (delivered != getNumberOfCustomer()) {
-                    if (count == 0) {
-                        System.out.println(count + ": A new day has start");
-                    }
-                    for (int i = 0; i < start.count; i++) {
-                        if (start.getWaitingTime(i) > 0) {
-                            start.minusWaitingTime(i);
-                        }
-                    }
-                    for (int i = 0; i < getNumberOfCustomer(); i++) {
-                        if (count == Integer.parseInt(getCustomer(1 + i, 1))) {
-                            numberOfArrival++;
-                            Customer c = new Customer(Integer.parseInt(getCustomer(1 + i, 1)), getCustomer(1 + i, 2), getCustomer(1 + i, 3), numberOfArrival);
-                            start.receiveOrder(c);
-                        }
-                    }
-                    delivered += start.delivery(count);
-                    if (delivered == getNumberOfCustomer()) {
-                        System.out.println(count + ": All Customer served and shops are closed");
-                    }
-
-                    count++;
-                }
-
-                System.out.println("");
-                System.out.println("----------------------------------------------------------------------------------");
-                System.out.println("|Customer |Arrival |Order Time |Finished Cooking Time |Delivery Time |Total Time ");
-                Customer c;
-                for (int i = 1; i <= getNumberOfCustomer(); i++) {
-                    for (int n = 0; n < getNumberOfCustomer(); n++) {
-                        c = (Customer) start.logging.get(n);
-                        if (c.getNumberOfArrival() == i) {
-                            System.out.format("|%-9d|%-8d|%-11d|%-22d|%-14d|%-10d", c.getNumberOfArrival(), c.getArrivalTime(), c.getArrivalTime(), c.getFinishCookingTime(), (c.getDeliveryTime()), (c.getFinishCookingTime() + c.getDeliveryTime() - c.getArrivalTime()));
-                            System.out.println();
-                        }
-                    }
-
-                }
-                Customer p;
-                for (int i = 1; i <= getNumberOfCustomer(); i++) {
-                    for (int n = 0; n < getNumberOfCustomer(); n++) {
-                        p = (Customer) start.logging.get(n);
-                        if (p.getNumberOfArrival() == i) {
-                            customerList.add(p);
-                        }
+                for (int i = 0; i < getNumberOfCustomer(); i++) {
+                    if (count == Integer.parseInt(getCustomer(1 + i, 1))) {
+                        numberOfArrival++;
+                        Customer c = new Customer(Integer.parseInt(getCustomer(1 + i, 1)), getCustomer(1 + i, 2), getCustomer(1 + i, 3), numberOfArrival);
+                        start.receiveOrder(c);
                     }
                 }
-        }
-        result = new printLogFileGUI(customerList);
-            cb = new MainGUI();
-            cb.setVisible(false);
+                delivered += start.delivery(count);
+                if (delivered == getNumberOfCustomer()) {
+                    System.out.println(count + ": All Customer served and shops are closed");
+                }
+
+                count++;
+            }
+
+            System.out.println("");
+            System.out.println("----------------------------------------------------------------------------------");
+            System.out.println("|Customer |Arrival |Order Time |Finished Cooking Time |Delivery Time |Total Time ");
+            Customer c;
+            for (int i = 1; i <= getNumberOfCustomer(); i++) {
+                for (int n = 0; n < getNumberOfCustomer(); n++) {
+                    c = (Customer) start.logging.get(n);
+                    if (c.getNumberOfArrival() == i) {
+                        System.out.format("|%-9d|%-8d|%-11d|%-22d|%-14d|%-10d", c.getNumberOfArrival(), c.getArrivalTime(), c.getArrivalTime(), c.getFinishCookingTime(), (c.getDeliveryTime()), (c.getFinishCookingTime() + c.getDeliveryTime() - c.getArrivalTime()));
+                        System.out.println();
+                    }
+                }
+
+            }
+            Customer p;
+            for (int i = 1; i <= getNumberOfCustomer(); i++) {
+                for (int n = 0; n < getNumberOfCustomer(); n++) {
+                    p = (Customer) start.logging.get(n);
+                    if (p.getNumberOfArrival() == i) {
+                        customerList.add(p);
+                    }
+                }
+            }
+            result = new printLogFileGUI(customerList);
+
             result.setVisible(true);
+        }
+
     }//GEN-LAST:event_EnterActionPerformed
 
     /**
@@ -296,7 +301,6 @@ public class MainGUI extends javax.swing.JFrame {
 
                 FoodDelivery start = new FoodDelivery(16, getNumberOfCustomer());    //count?
                 Shop shop = new Shop(start.choice, start.choice);
-              
 
                 for (int n = 0; n < 4; n++) {
                     for (int i = 0; i < 4; i++) {
@@ -326,7 +330,7 @@ public class MainGUI extends javax.swing.JFrame {
                     }
                     System.out.println("");
                 }
-              
+
             }
         });
         new MainGUI().setVisible(true);
@@ -335,7 +339,6 @@ public class MainGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Enter;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

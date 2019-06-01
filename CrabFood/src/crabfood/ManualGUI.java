@@ -56,10 +56,10 @@ public class ManualGUI<E> extends javax.swing.JFrame {
         enterMsg = new javax.swing.JLabel();
         Time = new javax.swing.JComboBox<>();
         Branch = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         ShopName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Shop","Crusty Crab", "Phum Bucket", "Burger Krusty", "Aori Ramen" }));
         ShopName.addItemListener(new java.awt.event.ItemListener() {
@@ -111,7 +111,7 @@ public class ManualGUI<E> extends javax.swing.JFrame {
 
         enterMsg.setFont(new java.awt.Font("Comic Sans MS", 2, 14)); // NOI18N
 
-        Time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"}));
+        Time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time","0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"}));
 
         if (ShopName.getSelectedItem().toString().equalsIgnoreCase("Crusty Crab")) {
             Branch.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -130,47 +130,42 @@ public class ManualGUI<E> extends javax.swing.JFrame {
             Dish.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Dish", "Cheese Tteokbokki", "Bibimbap", "Soju Ramen", "Sunset Rum"}));
         }
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 2, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Select based on your choice : ");
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 2, 18)); // NOI18N
+        jLabel1.setText("Select based on your choice : ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Branch, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ShopName, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ShopNameB, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(finish)
+                        .addContainerGap())
+                    .addComponent(enterMsg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Branch, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ShopName, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ShopNameB, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(finish))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(enterMsg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Time, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Dish, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48))
+                            .addComponent(Time, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Dish, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 67, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ShopName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -237,7 +232,7 @@ public class ManualGUI<E> extends javax.swing.JFrame {
     }//GEN-LAST:event_ShopNameItemStateChanged
 
     private void finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishActionPerformed
-          int cusCount = 0;
+        int cusCount = 0;
         int delivery = 0;
         try {
             Scanner s = new Scanner(new FileInputStream("manuallog.txt"));
@@ -275,38 +270,41 @@ public class ManualGUI<E> extends javax.swing.JFrame {
             i++;
             dish.add(all.get(i));
         }
-        int delivered = 0,n=0, numberOfArrival = 1,b=0,g=0,b1=0;
-       while(delivered!=cusCount){
-           if(n==0)
-               System.out.println(n+" : A new day has start!");
-         
-           for(int i=0;i<shop.size();i++){
-                   if(n==time.get(i)){
-                       System.out.println(n+" : Customer "+(i+1)+" wants to order "+dish.get(i)+" at branch ("+ branch.get(b1)+","+ branch.get(b1+1)+") from "+ shop.get(i)+".");
-                       b1++;b1++;
-                   }
-                   if(n==(time.get(i)+20)){
-                      System.out.println(n+" : Branch of "+ shop.get(i)+" at ("+ branch.get(b)+","+ branch.get(b+1)+") finish the order and start to deliver the food to customer "+(i+1)+".");
-                      b++;b++;
-                   }
-                   if(n==(delivertime.get(i)+time.get(i)+20)){
-                       System.out.println(n+" : Food have been delivered to customer "+(i+1)+".");
-                       delivered++;
-                   }                  
-           }           
-           n++;
-       }
-       if(delivered == cusCount)
-            System.out.println((n-1)+" : All customers had been served and shops are closed.");
-        
-       for (int i = 0; i < cusCount; i++) {
+        int delivered = 0, n = 0, numberOfArrival = 1, b = 0, g = 0, b1 = 0;
+        while (delivered != cusCount) {
+            if (n == 0) {
+                System.out.println(n + " : A new day has start!");
+            }
+
+            for (int i = 0; i < shop.size(); i++) {
+                if (n == time.get(i)) {
+                    System.out.println(n + " : Customer " + (i + 1) + " wants to order " + dish.get(i) + " at branch (" + branch.get(b1) + "," + branch.get(b1 + 1) + ") from " + shop.get(i) + ".");
+                    b1++;
+                    b1++;
+                }
+                if (n == (time.get(i) + 20)) {
+                    System.out.println(n + " : Branch of " + shop.get(i) + " at (" + branch.get(b) + "," + branch.get(b + 1) + ") finish the order and start to deliver the food to customer " + (i + 1) + ".");
+                    b++;
+                    b++;
+                }
+                if (n == (delivertime.get(i) + time.get(i) + 20)) {
+                    System.out.println(n + " : Food have been delivered to customer " + (i + 1) + ".");
+                    delivered++;
+                }
+            }
+            n++;
+        }
+        if (delivered == cusCount) {
+            System.out.println((n - 1) + " : All customers had been served and shops are closed.");
+        }
+
+        for (int i = 0; i < cusCount; i++) {
             Customer c = new Customer(time.get(i), shop.get(i), branch.get(g), branch.get(g + 1), dish.get(i), delivertime.get(i), numberOfArrival, (20 + time.get(i)), (20 + time.get(i) + delivertime.get(i)));
             customerList.add(c);
             g++;
             g++;
             numberOfArrival++;
-        } 
-       
+        }
 
         pf = new printLogFileGUI(customerList);
         pf.setVisible(true);
@@ -328,7 +326,6 @@ public class ManualGUI<E> extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Time;
     private javax.swing.JLabel enterMsg;
     private javax.swing.JButton finish;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
