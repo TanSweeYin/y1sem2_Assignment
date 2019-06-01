@@ -169,7 +169,7 @@ public class MainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
-        result = new printLogFileGUI(customerList);
+        
         System.out.println(input);
         if (input.equalsIgnoreCase("Manual")) {
             ManualGUI mg = new ManualGUI();
@@ -182,56 +182,16 @@ public class MainGUI extends javax.swing.JFrame {
                 System.out.println("Fail to rewrite file.");
             }
         } else {
-
-            cb = new MainGUI();
-            cb.setVisible(false);
-            result.setVisible(true);
-        }
-    }//GEN-LAST:event_EnterActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-
-                //first
-                String[][] dish = new String[4][4];
+         
+              int numberOfArrival = 0;
+                int delivered = 0;
+                int count = 0;
+                FoodDelivery start = new FoodDelivery(16, getNumberOfCustomer()); 
+                customerList = new ArrayList<>();
+                  String[][] dish = new String[4][4];
                 int[][] prepareTime = new int[4][4];
 
-                FoodDelivery start = new FoodDelivery(16, getNumberOfCustomer());    //count?
-                Shop shop = new Shop(start.choice, start.choice);
-                customerList = new ArrayList<>();
-
-                for (int n = 0; n < 4; n++) {
+                  for (int n = 0; n < 4; n++) {
                     for (int i = 0; i < 4; i++) {
                         dish[n][i] = getvalue((1 + n), 6 + (2 * i));         //(read frm input)getValue(int shop, int dish)- shop 1/2/3/4 - dish , dish[n][i]:dish name
                         prepareTime[n][i] = Integer.parseInt(getvalue((1 + n), 7 + (2 * i)));    //(read frm input)prepare time for different dish , String -> Integer: Integer.parseInt
@@ -242,29 +202,6 @@ public class MainGUI extends javax.swing.JFrame {
                         start.addLast(getvalue((1 + n), 1), dish[n], prepareTime[n], Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(0)), Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(2)));
                     }
                 }
-
-                //map
-                for (int x = 0; x < 8; x++) {
-                    for (int y = 0; y < 8; y++) {
-                        int get = 0;
-                        for (int i = 0; i < start.count; i++) {
-                            if (x == start.getx(i) && y == start.gety(i)) {
-                                System.out.print(start.getShopName(i).charAt(0) + "  ");
-                                get = 1;
-                            }
-                        }
-                        if (get == 0) {
-                            System.out.print("0  ");
-                        }
-                    }
-                    System.out.println("");
-                }
-
-                System.out.println("");
-                //reporting system
-                int numberOfArrival = 0;
-                int delivered = 0;
-                int count = 0;
                 while (delivered != getNumberOfCustomer()) {
                     if (count == 0) {
                         System.out.println(count + ": A new day has start");
@@ -312,6 +249,84 @@ public class MainGUI extends javax.swing.JFrame {
                         }
                     }
                 }
+        }
+        result = new printLogFileGUI(customerList);
+            cb = new MainGUI();
+            cb.setVisible(false);
+            result.setVisible(true);
+    }//GEN-LAST:event_EnterActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+
+                //first
+                String[][] dish = new String[4][4];
+                int[][] prepareTime = new int[4][4];
+
+                FoodDelivery start = new FoodDelivery(16, getNumberOfCustomer());    //count?
+                Shop shop = new Shop(start.choice, start.choice);
+              
+
+                for (int n = 0; n < 4; n++) {
+                    for (int i = 0; i < 4; i++) {
+                        dish[n][i] = getvalue((1 + n), 6 + (2 * i));         //(read frm input)getValue(int shop, int dish)- shop 1/2/3/4 - dish , dish[n][i]:dish name
+                        prepareTime[n][i] = Integer.parseInt(getvalue((1 + n), 7 + (2 * i)));    //(read frm input)prepare time for different dish , String -> Integer: Integer.parseInt
+                    }
+                    //?? Character.getNumericValue
+                    for (int m = 0; m < 4; m++) {
+                        //start.addLast(shop name, dish name :String[][] , prepareTime , get int x from string, ...y 
+                        start.addLast(getvalue((1 + n), 1), dish[n], prepareTime[n], Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(0)), Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(2)));
+                    }
+                }
+
+                //map
+                for (int x = 0; x < 8; x++) {
+                    for (int y = 0; y < 8; y++) {
+                        int get = 0;
+                        for (int i = 0; i < start.count; i++) {
+                            if (x == start.getx(i) && y == start.gety(i)) {
+                                System.out.print(start.getShopName(i).charAt(0) + "  ");
+                                get = 1;
+                            }
+                        }
+                        if (get == 0) {
+                            System.out.print("0  ");
+                        }
+                    }
+                    System.out.println("");
+                }
+              
             }
         });
         new MainGUI().setVisible(true);

@@ -1,0 +1,30 @@
+0
+Crusty Crab
+2 0
+Crabby Patty
+
+5
+Crusty Crab
+4 4
+Crabby Meal
+
+10
+Phum Bucket
+4 1
+Phum StickyWeeds
+
+15
+Burger Krusty
+1 4
+Fish Sandwich
+
+20
+Aori Ramen
+1 5
+Cheese Tteokbokki
+
+25
+Burger Krusty
+0 1
+Apple Pineapple
+

@@ -31,7 +31,7 @@ public class ManualGUI<E> extends javax.swing.JFrame {
     ArrayList<Integer> branch = new ArrayList<>();
     ArrayList<String> dish = new ArrayList<>();
     ArrayList<String> all = new ArrayList<>();
-    ArrayList<Integer> delivert = new ArrayList<>();
+    ArrayList<Integer> delivertime = new ArrayList<>();
 
     /**
      * Creates new form ManualGUI
@@ -237,7 +237,7 @@ public class ManualGUI<E> extends javax.swing.JFrame {
     }//GEN-LAST:event_ShopNameItemStateChanged
 
     private void finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishActionPerformed
-        int cusCount = 0;
+          int cusCount = 0;
         int delivery = 0;
         try {
             Scanner s = new Scanner(new FileInputStream("manuallog.txt"));
@@ -271,46 +271,42 @@ public class ManualGUI<E> extends javax.swing.JFrame {
             delivery = Integer.parseInt(part1) + Integer.parseInt(part2);
             branch.add(Integer.parseInt(part1));
             branch.add(Integer.parseInt(part2));
-            delivert.add(delivery);
+            delivertime.add(delivery);
             i++;
             dish.add(all.get(i));
         }
-
-        int delivered = 0, g = 0, g2 = 0, g3 = 0, t = 0, a = 0;
-        int count = 0;
-        int numberOfArrival = 1;
-        int numberOfArrival2 = 1;
-
-        if (count == 0) {
-            System.out.println(count + ": A new day has start!");
-        }
-        for (int i = 0; i < cusCount; i++) {
-            System.out.println(time.get(i) + ": Customer " + numberOfArrival + " wants to order " + dish.get(i) + " at (" + branch.get(g2) + "," + branch.get(g2 + 1) + ") from " + shop.get(i));
-            g2++;
-            g2++;
-            numberOfArrival++;
-        }
-
-        for (int i = 0; i < cusCount; i++) {
-            int ti = 20 + time.get(i);
-            System.out.println(ti + " (" + branch.get(g3) + "," + branch.get(g3 + 1) + ") from " + shop.get(i) + " is done and start to deliver.");
-            int tid = ti + delivert.get(i);
-            System.out.println(tid + ": Food is delivered to customer " + (i + 1));
-            if ((i + 1) == cusCount) {
-                System.out.println(tid + ": All food has been delivered.");
-                break;
-            }
-            g3++;
-            g3++;
-        }
-
-        for (int i = 0; i < cusCount; i++) {
-            Customer c = new Customer(time.get(i), shop.get(i), branch.get(g), branch.get(g + 1), dish.get(i), delivert.get(i), numberOfArrival2, (20 + time.get(i)), (20 + time.get(i) + delivert.get(i)));
+        int delivered = 0,n=0, numberOfArrival = 1,b=0,g=0,b1=0;
+       while(delivered!=cusCount){
+           if(n==0)
+               System.out.println(n+" : A new day has start!");
+         
+           for(int i=0;i<shop.size();i++){
+                   if(n==time.get(i)){
+                       System.out.println(n+" : Customer "+(i+1)+" wants to order "+dish.get(i)+" at branch ("+ branch.get(b1)+","+ branch.get(b1+1)+") from "+ shop.get(i)+".");
+                       b1++;b1++;
+                   }
+                   if(n==(time.get(i)+20)){
+                      System.out.println(n+" : Branch of "+ shop.get(i)+" at ("+ branch.get(b)+","+ branch.get(b+1)+") finish the order and start to deliver the food to customer "+(i+1)+".");
+                      b++;b++;
+                   }
+                   if(n==(delivertime.get(i)+time.get(i)+20)){
+                       System.out.println(n+" : Food have been delivered to customer "+(i+1)+".");
+                       delivered++;
+                   }                  
+           }           
+           n++;
+       }
+       if(delivered == cusCount)
+            System.out.println((n-1)+" : All customers had been served and shops are closed.");
+        
+       for (int i = 0; i < cusCount; i++) {
+            Customer c = new Customer(time.get(i), shop.get(i), branch.get(g), branch.get(g + 1), dish.get(i), delivertime.get(i), numberOfArrival, (20 + time.get(i)), (20 + time.get(i) + delivertime.get(i)));
             customerList.add(c);
             g++;
             g++;
-            numberOfArrival2++;
-        }
+            numberOfArrival++;
+        } 
+       
 
         pf = new printLogFileGUI(customerList);
         pf.setVisible(true);
