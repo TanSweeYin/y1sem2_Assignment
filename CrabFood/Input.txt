@@ -1,0 +1,55 @@
+Crusty Crab
+3 3
+2 0
+4 4
+2 3
+Crabby Patty
+20
+Crabby Meal
+20
+Sailors Surprise
+20
+Kelp Juice
+20
+
+Phum Bucket
+1 3
+2 2
+4 1
+0 5
+Phum Burger
+20
+Phum Fries
+20
+Phum Pie
+20
+Phum StickyWeeds
+20
+
+Burger Krusty
+1 4
+0 1
+4 0
+7 7
+The Klogger
+20
+Fish Sandwich
+20
+Twisty Lard
+20
+Apple Pineapple
+20
+
+Aori Ramen
+1 5
+2 7
+3 5
+7 4
+Cheese Tteokbokki
+20
+Bibimbap
+20
+Soju Ramen
+20
+Sunset Rum
+20

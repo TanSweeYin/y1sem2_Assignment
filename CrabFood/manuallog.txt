@@ -1,15 +1,15 @@
-22
+0
+Crusty Crab
+3 3
+Crabby Patty
+
+5
 Phum Bucket
 2 2
-Phum Burger
-
-11
-Aori Ramen
-2 7
-Bibimbap
-
-13
-Phum Bucket
-1 3
 Phum Pie
+
+9
+Burger Krusty
+0 1
+The Klogger
 

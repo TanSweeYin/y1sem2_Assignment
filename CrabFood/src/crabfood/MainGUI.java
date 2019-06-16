@@ -307,7 +307,7 @@ public class MainGUI extends javax.swing.JFrame {
                         dish[n][i] = getvalue((1 + n), 6 + (2 * i));         //(read frm input)getValue(int shop, int dish)- shop 1/2/3/4 - dish , dish[n][i]:dish name
                         prepareTime[n][i] = Integer.parseInt(getvalue((1 + n), 7 + (2 * i)));    //(read frm input)prepare time for different dish , String -> Integer: Integer.parseInt
                     }
-                    //?? Character.getNumericValue
+                    // Character.getNumericValue
                     for (int m = 0; m < 4; m++) {
                         //start.addLast(shop name, dish name :String[][] , prepareTime , get int x from string, ...y 
                         start.addLast(getvalue((1 + n), 1), dish[n], prepareTime[n], Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(0)), Character.getNumericValue(getvalue((1 + n), 2 + m).charAt(2)));
