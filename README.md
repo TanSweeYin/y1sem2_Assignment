@@ -31,7 +31,7 @@ In this food delivery queueing system, there is no priority queue. First come fi
 ##### Log file
 >
 Generate a summary report of the queueing system. The output of the queueing simulator is generated in the form of a table. The output data of the queue can be print to log file for recording purposes.
-  
+>  
 **APPROACH**
 >
 We designed this queueing simulator to imitate the queueing system in Grab Food. All the requirements and additional requirements were fulfilled and that the system able to produce waiting time for each customer as well as the processing time. We also implemented both scheduling method which are distributing the customer to the queue and the food. The queueing system would be in first come first serve manner. There is no VIP member.
@@ -48,4 +48,4 @@ Besides, this simulator is especially useful with the features to be able to wri
 	Our queue is based on the first-in first-out method. Only the first customer in the queue will be entertained. The dish ordered by the customer will be prepared and delivered. Once finished, the customer will be dequeue and the next customer in the queue will become the first customer in the queue. Only then the next customer will be entertained. The waiting time for the previous customers in the queue will also be included.
 	After the customer is served and is dequeue, the customer is added into an array list. The array list is used to print the log file for the system. This helps to maintain the record for the CrabFood food delivery business.
 	
-<img src="/TanSweeYin/y1sem2_Assignment/blob/master/CrabFood/assets/Picture1.png?raw=true" alt="Picture1.png">
+<img src="/assets/Picture1.png" alt="Picture1.png">
