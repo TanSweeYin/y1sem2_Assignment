@@ -4,10 +4,12 @@
 #### Description
 Your team is given this CrabFood project for 10,000 CrabCoins (currency of Crabby Island, CC). After analyzing the Crabbians’ feedback, as well as having some serious meetings with the top management, your team finally finalized the requirements for CrabFood. CrabFood is defined as a Desktop application that manages and keeps track of daily delivery order for crabs to ensure the efficiency of delivery services, just think about GrabFood.
 
-*TASK*
+**TASK**
+
 We are assigned to write a program to simulate a food delivery system for crabs. Our food delivery system is designed to manage and keep track of daily delivery order. This system is designed with several additional features as well.
 
-*TASK REQUIREMENTS*
+**TASK REQUIREMENTS**
+
 1. Make a Java console application that shows the delivery process.
 2. Make a logging system that shows the entire process when CrabFood is up.
 3. Make a reporting system that displays daily order information for every restaurant. This is
@@ -29,7 +31,7 @@ In this food delivery queueing system, there is no priority queue. First come fi
 -	Log file
 -   	Generate a summary report of the queueing system. The output of the queueing simulator is generated in the form of a table. The output data of the queue can be print to log file for recording purposes.
   
-*APPROACH*
+**APPROACH**
 
 We designed this queueing simulator to imitate the queueing system in Grab Food. All the requirements and additional requirements were fulfilled and that the system able to produce waiting time for each customer as well as the processing time. We also implemented both scheduling method which are distributing the customer to the queue and the food. The queueing system would be in first come first serve manner. There is no VIP member.
 	
@@ -40,7 +42,7 @@ Besides, this simulator is especially useful with the features to be able to wri
 
  
 
-*DATA STRUCTURE*
+**DATA STRUCTURE**
 	In our Data Structure, we’ve imported the LinkedList package to build the queue class. We’ve implemented queue in our food delivery system. A queue is built and the customer is placed into the queue once he made an order.
 	Our queue is based on the first-in first-out method. Only the first customer in the queue will be entertained. The dish ordered by the customer will be prepared and delivered. Once finished, the customer will be dequeue and the next customer in the queue will become the first customer in the queue. Only then the next customer will be entertained. The waiting time for the previous customers in the queue will also be included.
 	After the customer is served and is dequeue, the customer is added into an array list. The array list is used to print the log file for the system. This helps to maintain the record for the CrabFood food delivery business.
