@@ -40,12 +40,11 @@ We designed this queueing simulator to imitate the queueing system in Grab Food.
 
 Besides, this simulator is especially useful with the features to be able to write the output data produced in the system in a log file. This is vital for the collect and analyze data. The data generated such as arrival time, cooking time, delivery time and total completion time can be saved into the log file. The queueing system is designed to calculate the total serving time from the first until the last customer that had been served
 
-
- 
-
+>
 **DATA STRUCTURE**
+>
 	In our Data Structure, we’ve imported the LinkedList package to build the queue class. We’ve implemented queue in our food delivery system. A queue is built and the customer is placed into the queue once he made an order.
 	Our queue is based on the first-in first-out method. Only the first customer in the queue will be entertained. The dish ordered by the customer will be prepared and delivered. Once finished, the customer will be dequeue and the next customer in the queue will become the first customer in the queue. Only then the next customer will be entertained. The waiting time for the previous customers in the queue will also be included.
 	After the customer is served and is dequeue, the customer is added into an array list. The array list is used to print the log file for the system. This helps to maintain the record for the CrabFood food delivery business.
 	
-<img src="/assets/Picture1.png" alt="Picture1.png">
+!(Picture1.png)[/assets/Picture1.png]
