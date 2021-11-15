@@ -22,14 +22,14 @@ In this food delivery queueing system, there is no priority queue. First come fi
 3. In the output, the detail of the process and the total completion time is showed.
 4. This simulator can be set either automatically or manually to ensure all kinds of queue will be simulated and produce a desired outcome.
  
--	A display screen:
+##### A display screen:
 1.	There are six columns of data that display on the screen. The number of orders, arrival time of customer order, order time, cooking time, delivery time and total time are shown in each of the column.
 2.	The display screen should have number of rows according to the number of order in the queue.
 3.	The latest arrival of customer should be display at lowest row of the display screen.
 4.	In the display screen, the type of the queue is also identified along with which counter the customer will be served.
   
--	Log file
--   	Generate a summary report of the queueing system. The output of the queueing simulator is generated in the form of a table. The output data of the queue can be print to log file for recording purposes.
+##### Log file
+Generate a summary report of the queueing system. The output of the queueing simulator is generated in the form of a table. The output data of the queue can be print to log file for recording purposes.
   
 **APPROACH**
 
@@ -47,4 +47,4 @@ Besides, this simulator is especially useful with the features to be able to wri
 	Our queue is based on the first-in first-out method. Only the first customer in the queue will be entertained. The dish ordered by the customer will be prepared and delivered. Once finished, the customer will be dequeue and the next customer in the queue will become the first customer in the queue. Only then the next customer will be entertained. The waiting time for the previous customers in the queue will also be included.
 	After the customer is served and is dequeue, the customer is added into an array list. The array list is used to print the log file for the system. This helps to maintain the record for the CrabFood food delivery business.
 	
-
+!(Picture1.png)[/y1sem2_Assignment/CrabFood/assets/Picture1.png]
