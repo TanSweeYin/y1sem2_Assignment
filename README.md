@@ -1,7 +1,7 @@
 # DATA STRUCTURE
-##Crab Food
+## Crab Food
 
-####Description
+#### Description
 Your team is given this CrabFood project for 10,000 CrabCoins (currency of Crabby Island, CC). After analyzing the Crabbians’ feedback, as well as having some serious meetings with the top management, your team finally finalized the requirements for CrabFood. CrabFood is defined as a Desktop application that manages and keeps track of daily delivery order for crabs to ensure the efficiency of delivery services, just think about GrabFood.
 
 *TASK*
@@ -44,3 +44,5 @@ Besides, this simulator is especially useful with the features to be able to wri
 	In our Data Structure, we’ve imported the LinkedList package to build the queue class. We’ve implemented queue in our food delivery system. A queue is built and the customer is placed into the queue once he made an order.
 	Our queue is based on the first-in first-out method. Only the first customer in the queue will be entertained. The dish ordered by the customer will be prepared and delivered. Once finished, the customer will be dequeue and the next customer in the queue will become the first customer in the queue. Only then the next customer will be entertained. The waiting time for the previous customers in the queue will also be included.
 	After the customer is served and is dequeue, the customer is added into an array list. The array list is used to print the log file for the system. This helps to maintain the record for the CrabFood food delivery business.
+	
+
