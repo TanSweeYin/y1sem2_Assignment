@@ -63,14 +63,40 @@ To further enhance the system, an extra feature is added in which we can make a 
 
 <img width="259" alt="Picture2" src="https://user-images.githubusercontent.com/43487179/141723143-fd5a1d2e-3a0c-46d6-a332-b494d03be136.png">
 
-3. For manual mode, the user will have to insert every single data which is more flexible and the user is able to customize to suit the need for different situations. The user is able to choose the shop, the branch of the shop, the time to send the order to the shop and the type of the dish.
+For manual mode, the user will have to insert every single data which is more flexible and the user is able to customize to suit the need for different situations. The user is able to choose the shop, the branch of the shop, the time to send the order to the shop and the type of the dish.
 
 <img width="393" alt="Picture3" src="https://user-images.githubusercontent.com/43487179/141723149-8a0654fa-18e5-44a1-b16c-3791ed4adfa1.png">
 
-4. Customers get to choose the branch they want 
+3. Customers get to choose the branch they want 
 
 The nearest branch may not have the dish that suits the customer’s taste. The customer may prefer the same dish another branch which is located further away. Therefore, we’ve added the feature into the system in which the customer gets to choose which branch they would like to order from.
 
-![Picture4](https://user-images.githubusercontent.com/43487179/141723155-a215fd0e-0d1b-404f-b56a-310768e26568.png)
+<img width="393" alt="Picture4" src="https://user-images.githubusercontent.com/43487179/141723155-a215fd0e-0d1b-404f-b56a-310768e26568.png">
+>
+
+4. Larger map with more shops, more branches and more dishes
+We’ve added more shops: Crusty Crab, Phum Bucket, Burger Krusty, Aori Ramen, more branches with 4 branches for each shop and more dishes where there is also 4 dishes for each shop.
+
+A sample of the map in Crabby Island
+<img width="228" alt="Picture5" src="https://user-images.githubusercontent.com/43487179/141723163-71016b4d-f2f3-469a-b6dd-89b595fd5b1f.png">
+
+5. Traffic jam issues occurs.
+
+Our system will notify if there is traffic jam at a particular area. There will also be an estimation of the delay on the delivery shown by the system. This is to notify the customers and the deliveryman.
+
+<img width="457" alt="Picture6" src="https://user-images.githubusercontent.com/43487179/141723172-f1a1f5c6-bb7f-4495-812c-27b6aaa8fdbb.png">
+
+
+6. Print Log File
+We can save the data easily with just a simple button ‘Print to log file’ to save the data into log file. This feature is to save a record for the business of the food delivery for a particular day. The management can refer to the file in the future if they want to recheck.
+
+<img width="434" alt="Picture7" src="https://user-images.githubusercontent.com/43487179/141723186-e0417973-5298-4f55-bb18-62dd00d21ab3.png">
+
+7. A sample of the printed log file on a particular date.
+
+<img width="468" alt="Picture8" src="https://user-images.githubusercontent.com/43487179/141723196-44cdffba-bdfc-4848-8ceb-9421eb340524.png">
+
+
+
 
 
