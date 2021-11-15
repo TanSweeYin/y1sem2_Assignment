@@ -4,7 +4,9 @@
 #### Description
 Your team is given this CrabFood project for 10,000 CrabCoins (currency of Crabby Island, CC). After analyzing the Crabbians’ feedback, as well as having some serious meetings with the top management, your team finally finalized the requirements for CrabFood. CrabFood is defined as a Desktop application that manages and keeps track of daily delivery order for crabs to ensure the efficiency of delivery services, just think about GrabFood.
 
+>  
 **TASK**
+>
 
 We are assigned to write a program to simulate a food delivery system for crabs. Our food delivery system is designed to manage and keep track of daily delivery order. This system is designed with several additional features as well.
 
@@ -72,13 +74,14 @@ For manual mode, the user will have to insert every single data which is more fl
 The nearest branch may not have the dish that suits the customer’s taste. The customer may prefer the same dish another branch which is located further away. Therefore, we’ve added the feature into the system in which the customer gets to choose which branch they would like to order from.
 
 <img width="393" alt="Picture4" src="https://user-images.githubusercontent.com/43487179/141723155-a215fd0e-0d1b-404f-b56a-310768e26568.png">
->
+
 
 4. Larger map with more shops, more branches and more dishes
 We’ve added more shops: Crusty Crab, Phum Bucket, Burger Krusty, Aori Ramen, more branches with 4 branches for each shop and more dishes where there is also 4 dishes for each shop.
 
-A sample of the map in Crabby Island
 <img width="228" alt="Picture5" src="https://user-images.githubusercontent.com/43487179/141723163-71016b4d-f2f3-469a-b6dd-89b595fd5b1f.png">
+
+*A sample of the map in Crabby Island*
 
 5. Traffic jam issues occurs.
 
